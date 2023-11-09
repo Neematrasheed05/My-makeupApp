@@ -11,7 +11,7 @@ function Notfound() {
   return (
     <div>
       <h1>404</h1>
-      <button onClick={goToHome}>go back home</button>
+      <button onClick={goToHome}className="btn btn-dark btn-lg">go back home</button>
     </div>
   );
 }

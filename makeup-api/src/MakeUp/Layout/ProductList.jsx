@@ -2,11 +2,13 @@ import React, { useState, useEffect, createContext } from "react";
 import DisplayComponent from "./DisplayComponent";
 import PaginationControls from "./PaginationControls";
 
-
+//this is the data fetching component, its the Parent 
+//to all other components
 
 export const UserContext = createContext();
 function ProductList ({selectedProduct, setSelectedProduct}){
     const [products, setProducts] = useState([]);
+    //pagination section
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(10);
     
@@ -20,8 +22,6 @@ function ProductList ({selectedProduct, setSelectedProduct}){
             console.log(data);
           });
       }, []);
-      
-     
 
     return(
         <div>

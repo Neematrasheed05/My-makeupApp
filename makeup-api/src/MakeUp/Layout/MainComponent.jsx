@@ -31,7 +31,7 @@ function MainComponent(){
           Explore Now
         </button>
         </div>
-        <p className="lead text-muted">
+        <p className="lead text-muted ">
           Step into the enchanting world of beauty where every brushstroke unveils
           a canvas of self-expression. At All Things Beauty, we believe makeup is
           more than colors on a palette; it's a celebration of individuality and
