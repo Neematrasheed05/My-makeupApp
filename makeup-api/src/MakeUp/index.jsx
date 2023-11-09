@@ -1,7 +1,5 @@
-import React from "react";
-
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-
+import React, {useState} from "react";
 // Login Section
 
 import Login from "./LogIn";
@@ -19,6 +17,8 @@ import NOTFOUND from "./404";
 // Nested routes.
 
 function MakeUp() {
+  const [selectedProduct, setSelectedProduct] = useState([]);
+
 
   return (
     
@@ -27,8 +27,8 @@ function MakeUp() {
         <Route path="" element={<Login/>} />
         <Route path="layout" element={<Layout/>}>
           <Route path="" element={<MainComponent/>} />
-         <Route path="list" element={<ProductList />} />
-          <Route path="addtocart" element={<AddToCart />} />
+         <Route path="list" element={<ProductList  selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>} />
+          <Route path="addtocart" element={<AddToCart selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>} />
         </Route>
         
         <Route path="*" element={<NOTFOUND/>} />

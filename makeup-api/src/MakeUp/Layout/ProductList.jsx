@@ -3,12 +3,13 @@ import DisplayComponent from "./DisplayComponent";
 import PaginationControls from "./PaginationControls";
 
 
+
 export const UserContext = createContext();
-function ProductList (){
+function ProductList ({selectedProduct, setSelectedProduct}){
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(10);
-  
+    
 
     useEffect(() => {
         // Fetch data when the component mounts
@@ -20,6 +21,7 @@ function ProductList (){
           });
       }, []);
       
+     
 
     return(
         <div>
@@ -27,13 +29,17 @@ function ProductList (){
       <div>
       <DisplayComponent
         currentPage={currentPage}
-         itemsPerPage={itemsPerPage} />
+         itemsPerPage={itemsPerPage} 
+         selectedProduct={selectedProduct} 
+         setSelectedProduct={setSelectedProduct}
+         />
 
          <PaginationControls
           currentPage={currentPage}
           totalPages={Math.ceil(products.length / itemsPerPage)}
           onPageChange={(page) => setCurrentPage(page)}
         />
+       
       </div>
     </UserContext.Provider>
     

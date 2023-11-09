@@ -21,14 +21,16 @@ function MainComponent(){
       <div>
 
         <h1 className="display-3 text-uppercase text-center text-danger font-weight-bold">
-          Welcome To All Things Beauty
+          WELCOME
         </h1>
+        <div>
         <button
-          className="btn btn-dark btn-lg"
+          className="btn btn-dark btn-lg position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill"
           onClick={() => handleExploreClick()}
         >
           Explore Now
         </button>
+        </div>
         <p className="lead text-muted">
           Step into the enchanting world of beauty where every brushstroke unveils
           a canvas of self-expression. At All Things Beauty, we believe makeup is
