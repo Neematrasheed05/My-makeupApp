@@ -29,7 +29,6 @@ console.log(selectedProduct);
       price_sign={product.price_sign}
       handleclick={handleclick}
       id={product.id}
-      product_colors= {product.product_colors}
 
     />
   ))
