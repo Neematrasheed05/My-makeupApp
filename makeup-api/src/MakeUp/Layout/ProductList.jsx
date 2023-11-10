@@ -6,7 +6,7 @@ import PaginationControls from "./PaginationControls";
 //to all other components
 
 export const UserContext = createContext();
-function ProductList ({selectedProduct, setSelectedProduct}){
+function ProductList ({carts,setCarts}){
     const [products, setProducts] = useState([]);
     //pagination section
     const [currentPage, setCurrentPage] = useState(1);
@@ -30,8 +30,8 @@ function ProductList ({selectedProduct, setSelectedProduct}){
       <DisplayComponent
         currentPage={currentPage}
          itemsPerPage={itemsPerPage} 
-         selectedProduct={selectedProduct} 
-         setSelectedProduct={setSelectedProduct}
+         carts = {carts}
+         setCarts = {setCarts}
          />
 
          <PaginationControls
@@ -39,7 +39,6 @@ function ProductList ({selectedProduct, setSelectedProduct}){
           totalPages={Math.ceil(products.length / itemsPerPage)}
           onPageChange={(page) => setCurrentPage(page)}
         />
-       
       </div>
     </UserContext.Provider>
     

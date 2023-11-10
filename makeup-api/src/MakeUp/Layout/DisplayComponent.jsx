@@ -1,25 +1,31 @@
 import React, { useContext} from "react";
 import { UserContext } from "./ProductList";
 import ProductItem from "./ProductItem";
+import { useNavigate } from 'react-router-dom';
 
 
-function DisplayComponent({ currentPage, itemsPerPage,selectedProduct, setSelectedProduct }) {
-  
-
+function DisplayComponent({ currentPage, itemsPerPage,carts,setCarts }) {
   const products = useContext(UserContext);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-
   const displayedProducts = products.slice(startIndex, endIndex);
+  
+  const navigate = useNavigate();
+ 
+  const handleclick=(id)=>{
+    const selectedP=products.find((p)=> id===p.id)
+    if (!carts.some((cart) => cart.id ===selectedP.id)){
+      setCarts([...carts,selectedP])
+      navigate('/layout/addtocart');
+    }
+    else{ alert(' Item Already in cart')}
+    }
+    console.log(carts)
+   
+  
 
- const handleclick = (id)=> {
-  const InCart = products.find((item) => id === item.id);
-  setSelectedProduct([...selectedProduct, InCart]);
-}
-console.log(selectedProduct);
-
-  const AddedToCart = displayedProducts.map((product) => (
+  const ProductsOnDisplay = displayedProducts.map((product) => (
     <ProductItem
       key={product.id} 
       image={product.image_link}
@@ -37,7 +43,8 @@ console.log(selectedProduct);
   return (
     <div className="container">
       <div className="row">
-        {AddedToCart}
+        {ProductsOnDisplay}
+
         </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductItem({
+function ProductItem({
   id,
   handleclick,
   price_sign,
@@ -27,7 +27,7 @@ export default function ProductItem({
           </p>
         </div>
         <div className="d-flex justify-content-between align-items-center">
-          <button className="btn btn-dark btn-lg" onClick={() => handleclick(id)}>
+          <button className="fa fa-trash" onClick={() => handleclick(id)}>
             Add to Cart
           </button>
         </div>
@@ -35,3 +35,4 @@ export default function ProductItem({
     </div>
   );
 }
+export default ProductItem;

@@ -17,7 +17,7 @@ import NOTFOUND from "./404";
 // Nested routes.
 
 function MakeUp() {
-  const [selectedProduct, setSelectedProduct] = useState([]);
+  const [carts, setCarts] = useState([]);
 
 
   return (
@@ -27,8 +27,8 @@ function MakeUp() {
         <Route path="" element={<Login/>} />
         <Route path="layout" element={<Layout/>}>
           <Route path="" element={<MainComponent/>} />
-         <Route path="list" element={<ProductList  selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>} />
-          <Route path="addtocart" element={<AddToCart selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>} />
+         <Route path="list" element={<ProductList  carts={carts} setCarts={setCarts}/>} />
+          <Route path="addtocart" element={<AddToCart carts={carts} setCarts={setCarts}/>} />
         </Route>
         
         <Route path="*" element={<NOTFOUND/>} />
