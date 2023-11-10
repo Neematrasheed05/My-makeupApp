@@ -18,7 +18,7 @@ function Layout() {
                  All Products
               </Nav.Link>
               <Nav.Link as={Link} to="addtocart">
-                Your Cart
+                Cart🛒
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -9,7 +9,7 @@ function AddToCart ({carts, setCarts}){
    
     return (
         <div>
-            <h1 >Your Cart<span class="fs-2" role="img" aria-label="bag emoji">🛍️</span></h1>
+            <h1 >Your Collection </h1>
             <div className="container">
       <div className="row">
       <div className="col-lg-3 col-md-4 col-sm-6 mb-4">

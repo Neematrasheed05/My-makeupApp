@@ -33,12 +33,13 @@ function ProductList ({carts,setCarts}){
          carts = {carts}
          setCarts = {setCarts}
          />
-
+       <footers>
          <PaginationControls
           currentPage={currentPage}
           totalPages={Math.ceil(products.length / itemsPerPage)}
           onPageChange={(page) => setCurrentPage(page)}
         />
+        </footers>
       </div>
     </UserContext.Provider>
     
