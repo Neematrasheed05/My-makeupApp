@@ -32,6 +32,7 @@ function DisplayComponent({ currentPage, itemsPerPage,carts,setCarts }) {
       name={product.name}
       brand={product.brand}
       category={product.category}
+      price={product.price}
       price_sign={product.price_sign}
       handleclick={handleclick}
       id={product.id}
